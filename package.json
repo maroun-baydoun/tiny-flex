@@ -1,0 +1,39 @@
+{
+  "name": "tiny-flex",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "module": "index.js",
+  "scripts": {
+    "start": "http-server -p 8888 -s",
+    "format": "prettier --write .",
+    "test": "jest",
+    "test:watch": "jest --watchAll"
+  },
+  "keywords": [
+    "flexbox",
+    "web components"
+  ],
+  "author": {
+    "name": "Maroun Baydoun",
+    "url": "https://maroun-baydoun.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:maroun-baydoun/tiny-flex.git"
+  },
+  "bugs": {
+    "url": "https://github.com/maroun-baydoun/tiny-flex/issues"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "13.0.0",
+    "jest": "27.0.6",
+    "jest-puppeteer": "5.0.4",
+    "prettier": "2.3.2",
+    "puppeteer": "9.1.1"
+  },
+  "jest": {
+    "preset": "jest-puppeteer"
+  }
+}
