@@ -2,8 +2,8 @@
   "name": "tiny-flex",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "module": "index.js",
+  "main": "components/index.js",
+  "module": "components/index.js",
   "scripts": {
     "start": "http-server -p 8888 -s",
     "format": "prettier --write .",
