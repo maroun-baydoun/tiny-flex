@@ -5,11 +5,21 @@
   "main": "components/index.js",
   "module": "components/index.js",
   "type": "module",
+  "files": [
+    "components",
+    "custom-elements.json",
+    "README.md",
+    "LICENSE.md"
+  ],
+  "customElements": "custom-elements.json",
   "scripts": {
     "start": "http-server -p 8888 -s",
     "format": "prettier --write .",
     "test": "JEST_PUPPETEER_CONFIG=jest-puppeteer.config.cjs jest",
-    "test:watch": "JEST_PUPPETEER_CONFIG=jest-puppeteer.config.cjs jest --watchAll"
+    "test:watch": "JEST_PUPPETEER_CONFIG=jest-puppeteer.config.cjs jest --watchAll",
+    "make-manifest": "npx @custom-elements-manifest/analyzer analyze",
+    "preversion": "npm test",
+    "postversion": "git push --tags"
   },
   "keywords": [
     "flexbox",
