@@ -19,6 +19,10 @@ export class TinyContainer extends TinyElement {
         align-items: var(${getCssVariableName("align-items")});
       }
 
+      :host([align-content]) {
+        align-content: var(${getCssVariableName("align-content")});
+      }
+
       :host([justify-content]) {
         justify-content: var(${getCssVariableName("justify-content")});
       }
@@ -49,6 +53,7 @@ export class TinyContainer extends TinyElement {
     return [
       "direction",
       "align-items",
+      "align-content",
       "justify-content",
       "wrap",
       "flow",

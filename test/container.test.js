@@ -60,6 +60,14 @@ describe("container", () => {
     expect(alignItems).toBe("center");
   });
 
+  it("sets align-content", async () => {
+    const alignContent = await getStyle("align-content", {
+      "align-content": "stretch",
+    });
+
+    expect(alignContent).toBe("stretch");
+  });
+
   it("sets justify-content", async () => {
     const justifyContent = await getStyle("justify-content", {
       "justify-content": "center",
