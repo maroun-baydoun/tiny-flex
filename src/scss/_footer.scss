@@ -1,0 +1,39 @@
+@import "variables";
+@import "mixins";
+
+.footer {
+  border-top: 1px dashed $border-color;
+  font-size: $footer-font-size;
+  flex-shrink: 0;
+
+  @include padding(4, 2);
+  @include flex($justify-content: space-between);
+
+  @media #{$media-mobile} {
+    @include flex-column-centered();
+  }
+
+  &__links {
+    & > a {
+      @include margin-right(2);
+
+      @media #{$media-mobile} {
+        @include padding(2, 2);
+        @include margin-left(1);
+        @include margin-right(1);
+      }
+    }
+  }
+
+  &__credits {
+    a {
+      @include margin-left(0.5);
+      @include padding-vertical(2);
+      @include padding-right(2);
+    }
+
+    @media #{$media-mobile} {
+      @include margin-top(5);
+    }
+  }
+}
