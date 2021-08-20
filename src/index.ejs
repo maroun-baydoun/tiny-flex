@@ -53,7 +53,89 @@
         </nav>
     </header>
     <main class="content">
+        <h3 id="install-npm">Install npm package</h3>
+        <pre class="syntax-highlight-container"><code class="language-shell">npm i tiny-flex</code></pre>
+        Or
+        <pre class="syntax-highlight-container"><code class="language-shell">yarn add tiny-flex</code></pre>
+        <p>Import the components:</p>
+        <pre class="syntax-highlight-container"><code class="language-js">// Import all the components
+import "tiny-flex";
 
+// Import the container component only
+import "tiny-flex/components/container";</code></pre>
+
+        <p>The code shipped in the package is ES2015. If you are targeting unsupported browsers, make sure you transpile it in your project.</p>
+    
+        <hr class="hr--large"/>
+
+        <h3 id="install-cdn">Include from CDN</h3>
+        <pre class="syntax-highlight-container"><code class="language-html">&lt;!-- Import all components --&gt;
+&lt;script
+    type=&quot;module&quot;
+    src=&quot;//unpkg.com/tiny-flex@insert-version-here/components/index.js&quot;
+&gt;&lt;/script&gt;
+
+&lt;!-- Import the container component only --&gt;
+&lt;script
+    type=&quot;module&quot;
+    src=&quot;//unpkg.com/tiny-flex@insert-version-here/components/container.js&quot;
+&gt;&lt;/script&gt;</code></pre>
+
+        <hr class="hr--large"/>
+
+        <h3 id="use">Use</h3>
+        
+
+        <pre class="syntax-highlight-container"><code class="language-html">&lt;flex-container&gt;
+    &lt;flex-item&gt;Hello&lt;/flex-item&gt;
+    &lt;flex-item&gt;world&lt;/flex-item&gt;
+&lt;/flex-container&gt;</code></pre>
+
+<hr class="hr--medium"/>
+<span class="monospace">flex-container</span> accepts the following optional attributes:
+
+<ul class="ul ul--margin-top ul--margin-left ul--square">
+    <li>direction</li>
+    <li>align-items</li>
+    <li>justify-content</li>
+    <li>align-content</li>
+    <li>wrap</li>
+    <li>flow</li>
+    <li>gap</li>
+    <li>row-gap</li>
+    <li>column-gap</li>
+</ul>
+
+<hr class="hr--medium"/>
+
+<span class="monospace">flex-item</span> accepts the following optional attributes:
+
+<ul class="ul ul--margin-top ul--margin-left ul--square">
+    <li>flex</li>
+    <li>grow</li>
+    <li>shrink</li>
+    <li>basis</li>
+    <li>order</li>
+    <li>align-self</li>
+</ul>
+
+
+
+    
+        <hr class="hr--large"/>
+
+
+        <h3>Learn more</h3>
+        <section>
+            <ul class="ul ul--square ul--margin-left">
+                <li>
+                    <a href="https://flexboxfroggy.com/" rel="external noopener" target="_blank">Flexbox Froggy</a> is a fun game to learn Flexbox.
+                </li>
+                <li>
+                    Try <a href="https://dev.maroun-baydoun.com/reaflex/">reaflex</a>, a flexbox library for React.
+                </li>
+            </ul>
+        </section>
         <%if (htmlWebpackPlugin.options.linkHome) { %>
             <hr class="hr--large"/>
             <div class="link-home">
