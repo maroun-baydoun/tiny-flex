@@ -119,7 +119,54 @@ import "tiny-flex/components/container";</code></pre>
     <li>align-self</li>
 </ul>
 
+    
+        <hr class="hr--large"/>
 
+
+        <h3 id="demo">Demo</h3>
+        <flex-container direction="column" class="demo-container">
+            <flex-item flex="1" class="demo-cell">
+                <flex-container direction="column">
+                    <h4>Defaults</h4>
+                    <flex-container class="demo-cell--content">
+                        <flex-item class="demo-box">tiny</flex-item>
+                        <flex-item class="demo-box">flex</flex-item>
+                        <flex-item class="demo-box">web</flex-item>
+                        <flex-item class="demo-box">components</flex-item>
+                    </flex-container>
+                    <details>
+                        <summary>View code</summary>
+                        <pre class="syntax-highlight-container"><code class="language-html">&lt;flex-container&gt;
+    &lt;flex-item&gt;tiny&lt;/flex-item&gt;
+    &lt;flex-item&gt;flex&lt;/flex-item&gt;
+    &lt;flex-item&gt;web&lt;/flex-item&gt;
+    &lt;flex-item&gt;components&lt;/flex-item&gt;
+&lt;/flex-container&gt;</code></pre>
+                    </details>
+                </flex-container>
+            </flex-item>
+
+            <flex-item flex="1" class="demo-cell">
+                <flex-container direction="column">
+                    <h4>Column</h4>
+                    <flex-container class="demo-cell--content demo-cell--content__column" direction="column">
+                        <flex-item class="demo-box">tiny</flex-item>
+                        <flex-item class="demo-box">flex</flex-item>
+                        <flex-item class="demo-box">web</flex-item>
+                        <flex-item class="demo-box">components</flex-item>
+                    </flex-container>
+                    <details>
+                        <summary>View code</summary>
+                        <pre class="syntax-highlight-container"><code class="language-html">&lt;flex-container direction="column"&gt;
+    &lt;flex-item&gt;tiny&lt;/flex-item&gt;
+    &lt;flex-item&gt;flex&lt;/flex-item&gt;
+    &lt;flex-item&gt;web&lt;/flex-item&gt;
+    &lt;flex-item&gt;components&lt;/flex-item&gt;
+&lt;/flex-container&gt;</code></pre>
+                    </details>
+                </flex-container>
+            </flex-item>
+        </flex-container>
 
     
         <hr class="hr--large"/>

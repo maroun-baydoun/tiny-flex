@@ -1,0 +1,47 @@
+@import "variables";
+@import "mixins";
+
+.demo-container {
+  width: 50vw;
+  min-height: 300px;
+
+  @media #{$media-mobile} {
+    width: auto;
+  }
+
+  .demo-cell {
+    @include margin-bottom(2);
+
+    &--content {
+      border: 1px solid $border-color;
+      overflow: auto;
+
+      @include padding(1, 1);
+
+      .demo-box {
+        background-color: #efefef;
+
+        @include padding(1, 1);
+        @include margin-horizontal(1);
+      }
+
+      &__column {
+        .demo-box {
+          @include margin(1, 0);
+        }
+      }
+    }
+
+    &--code {
+      display: none;
+
+      &__visible {
+        display: initial;
+      }
+
+      & + button {
+        @include margin-vertical(1);
+      }
+    }
+  }
+}
