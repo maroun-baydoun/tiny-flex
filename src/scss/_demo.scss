@@ -10,7 +10,7 @@
   }
 
   .demo-cell {
-    @include margin-bottom(2);
+    @include margin-bottom(5);
 
     &--content {
       border: 1px solid $border-color;

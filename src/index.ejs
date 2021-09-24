@@ -166,6 +166,132 @@ import "tiny-flex/components/container";</code></pre>
                     </details>
                 </flex-container>
             </flex-item>
+
+            <flex-item flex="1" class="demo-cell">
+                <flex-container direction="column">
+                    <h4>Reverse column</h4>
+                    <flex-container class="demo-cell--content demo-cell--content__column" direction="column-reverse">
+                        <flex-item class="demo-box">tiny</flex-item>
+                        <flex-item class="demo-box">flex</flex-item>
+                        <flex-item class="demo-box">web</flex-item>
+                        <flex-item class="demo-box">components</flex-item>
+                    </flex-container>
+                    <details>
+                        <summary>View code</summary>
+                        <pre class="syntax-highlight-container"><code class="language-html">&lt;flex-container direction="column-reverse"&gt;
+    &lt;flex-item&gt;tiny&lt;/flex-item&gt;
+    &lt;flex-item&gt;flex&lt;/flex-item&gt;
+    &lt;flex-item&gt;web&lt;/flex-item&gt;
+    &lt;flex-item&gt;components&lt;/flex-item&gt;
+&lt;/flex-container&gt;</code></pre>
+                    </details>
+                </flex-container>
+            </flex-item>
+
+            <flex-item flex="1" class="demo-cell">
+                <flex-container direction="column">
+                    <h4>Content justified to flex-end</h4>
+                    <flex-container class="demo-cell--content" justify-content="flex-end">
+                        <flex-item class="demo-box">tiny</flex-item>
+                        <flex-item class="demo-box">flex</flex-item>
+                        <flex-item class="demo-box">web</flex-item>
+                        <flex-item class="demo-box">components</flex-item>
+                    </flex-container>
+                    <details>
+                        <summary>View code</summary>
+                        <pre class="syntax-highlight-container"><code class="language-html">&lt;flex-container justify-content="flex-end"&gt;
+    &lt;flex-item&gt;tiny&lt;/flex-item&gt;
+    &lt;flex-item&gt;flex&lt;/flex-item&gt;
+    &lt;flex-item&gt;web&lt;/flex-item&gt;
+    &lt;flex-item&gt;components&lt;/flex-item&gt;
+&lt;/flex-container&gt;</code></pre>
+                    </details>
+                </flex-container>
+            </flex-item>
+
+            <flex-item flex="1" class="demo-cell">
+                <flex-container direction="column">
+                    <h4>Items aligned to the center</h4>
+                    <flex-container class="demo-cell--content demo-cell--content__column" direction="column" align-items="center">
+                        <flex-item class="demo-box">tiny</flex-item>
+                        <flex-item class="demo-box">flex</flex-item>
+                        <flex-item class="demo-box">web</flex-item>
+                        <flex-item class="demo-box">components</flex-item>
+                    </flex-container>
+                    <details>
+                        <summary>View code</summary>
+                        <pre class="syntax-highlight-container"><code class="language-html">&lt;flex-container direction="column" align-items="center"&gt;
+    &lt;flex-item&gt;tiny&lt;/flex-item&gt;
+    &lt;flex-item&gt;flex&lt;/flex-item&gt;
+    &lt;flex-item&gt;web&lt;/flex-item&gt;
+    &lt;flex-item&gt;components&lt;/flex-item&gt;
+&lt;/flex-container&gt;</code></pre>
+                    </details>
+                </flex-container>
+            </flex-item>
+
+            <flex-item flex="1" class="demo-cell">
+                <flex-container direction="column">
+                    <h4>Item with flex 1</h4>
+                    <flex-container class="demo-cell--content">
+                        <flex-item class="demo-box">tiny</flex-item>
+                        <flex-item class="demo-box" flex="1">flex</flex-item>
+                        <flex-item class="demo-box">web</flex-item>
+                        <flex-item class="demo-box">components</flex-item>
+                    </flex-container>
+                    <details>
+                        <summary>View code</summary>
+                        <pre class="syntax-highlight-container"><code class="language-html">&lt;flex-container direction="column"&gt;
+    &lt;flex-item&gt;tiny&lt;/flex-item&gt;
+    &lt;flex-item flex="1"&gt;flex&lt;/flex-item&gt;
+    &lt;flex-item&gt;web&lt;/flex-item&gt;
+    &lt;flex-item&gt;components&lt;/flex-item&gt;
+&lt;/flex-container&gt;</code></pre>
+                    </details>
+                </flex-container>
+            </flex-item>
+
+            <flex-item flex="1" class="demo-cell">
+                <flex-container direction="column">
+                    <h4>Item self aligned to flex-end</h4>
+                    <flex-container class="demo-cell--content demo-cell--content__column" direction="column" align-items="center">
+                        <flex-item class="demo-box">tiny</flex-item>
+                        <flex-item class="demo-box" align-self="flex-end">flex</flex-item>
+                        <flex-item class="demo-box">web</flex-item>
+                        <flex-item class="demo-box">components</flex-item>
+                    </flex-container>
+                    <details>
+                        <summary>View code</summary>
+                        <pre class="syntax-highlight-container"><code class="language-html">&lt;flex-container direction="column" align-items="center"&gt;
+    &lt;flex-item&gt;tiny&lt;/flex-item&gt;
+    &lt;flex-item align-self="flex-end"&gt;flex&lt;/flex-item&gt;
+    &lt;flex-item&gt;web&lt;/flex-item&gt;
+    &lt;flex-item&gt;components&lt;/flex-item&gt;
+&lt;/flex-container&gt;</code></pre>
+                    </details>
+                </flex-container>
+            </flex-item>
+
+            <flex-item flex="1" class="demo-cell">
+                <flex-container direction="column">
+                    <h4>Items with different orders</h4>
+                    <flex-container class="demo-cell--content">
+                        <flex-item class="demo-box" order="2">tiny</flex-item>
+                        <flex-item class="demo-box" order="1">flex</flex-item>
+                        <flex-item class="demo-box" order="4">web</flex-item>
+                        <flex-item class="demo-box" order="3">components</flex-item>
+                    </flex-container>
+                    <details>
+                        <summary>View code</summary>
+                        <pre class="syntax-highlight-container"><code class="language-html">&lt;flex-container&gt;
+    &lt;flex-item order="2"&gt;tiny&lt;/flex-item&gt;
+    &lt;flex-item order="1"&gt;flex&lt;/flex-item&gt;
+    &lt;flex-item order="4"&gt;web&lt;/flex-item&gt;
+    &lt;flex-item order="3"&gt;components&lt;/flex-item&gt;
+&lt;/flex-container&gt;</code></pre>
+                    </details>
+                </flex-container>
+            </flex-item>
         </flex-container>
 
     
