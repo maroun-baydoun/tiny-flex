@@ -5,6 +5,6 @@ module.exports = {
   heading2: "Flexbox layout for the modern web",
   githubLink: "https://github.com/maroun-baydoun/tiny-flex",
   npmLink: "https://www.npmjs.com/package/tiny-flex",
-  subPath: "tiny-flex",
+  subPath: "tiny-flex/",
   linkHome: true,
 };
