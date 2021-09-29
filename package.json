@@ -1,6 +1,6 @@
 {
   "name": "tiny-flex",
-  "version": "1.0.0-beta.2",
+  "version": "1.0.0",
   "description": "Flexbox layout for the modern web",
   "main": "components/index.js",
   "module": "components/index.js",
