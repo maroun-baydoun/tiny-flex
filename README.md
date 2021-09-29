@@ -74,6 +74,10 @@ The code shipped in the package is ES2015. If you are targeting [unsupported bro
 - order
 - align-self
 
+## Demo 
+
+See it running in action in this [demo](https://dev.maroun-baydoun.com/tiny-flex/#demo).
+
 ## License
 
 MIT Copyright [Maroun Baydoun](https://maroun-baydoun.com/).
