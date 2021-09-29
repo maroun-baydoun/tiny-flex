@@ -36,6 +36,7 @@
   "bugs": {
     "url": "https://github.com/maroun-baydoun/tiny-flex/issues"
   },
+  "homepage": "https://dev.maroun-baydoun.com/tiny-flex/",
   "license": "MIT",
   "devDependencies": {
     "http-server": "13.0.2",
