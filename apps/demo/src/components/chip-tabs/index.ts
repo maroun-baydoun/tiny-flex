@@ -12,7 +12,10 @@ export class ChipTabs extends HTMLElement {
         button.tabIndex = active ? 0 : -1;
         if (button.dataset.tab) {
           button.id = `${this.id || "chip-tabs"}-tab-${button.dataset.tab}`;
-          button.setAttribute("aria-controls", `${this.id || "chip-tabs"}-${button.dataset.tab}`);
+          button.setAttribute(
+            "aria-controls",
+            `${this.id || "chip-tabs"}-${button.dataset.tab}`,
+          );
         }
       });
       panels.forEach((panel) => {
@@ -21,7 +24,10 @@ export class ChipTabs extends HTMLElement {
         panel.hidden = !active;
         if (panel.dataset.tabPanel) {
           panel.id = `${this.id || "chip-tabs"}-${panel.dataset.tabPanel}`;
-          panel.setAttribute("aria-labelledby", `${this.id || "chip-tabs"}-tab-${panel.dataset.tabPanel}`);
+          panel.setAttribute(
+            "aria-labelledby",
+            `${this.id || "chip-tabs"}-tab-${panel.dataset.tabPanel}`,
+          );
           panel.setAttribute("role", "tabpanel");
         }
       });
@@ -29,11 +35,22 @@ export class ChipTabs extends HTMLElement {
     this.querySelector("[data-tablist]")?.setAttribute("role", "tablist");
     buttons.forEach((button, index) => {
       button.setAttribute("role", "tab");
-      button.addEventListener("click", () => activate(button.dataset.tab ?? ""));
+      button.addEventListener("click", () =>
+        activate(button.dataset.tab ?? ""),
+      );
       button.addEventListener("keydown", (event) => {
-        if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
+        if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key))
+          return;
         event.preventDefault();
-        const next = event.key === "Home" ? 0 : event.key === "End" ? buttons.length - 1 : (index + (event.key === "ArrowRight" ? 1 : -1) + buttons.length) % buttons.length;
+        const next =
+          event.key === "Home"
+            ? 0
+            : event.key === "End"
+              ? buttons.length - 1
+              : (index +
+                  (event.key === "ArrowRight" ? 1 : -1) +
+                  buttons.length) %
+                buttons.length;
         buttons[next].focus();
         activate(buttons[next].dataset.tab ?? "");
       });
@@ -42,4 +59,5 @@ export class ChipTabs extends HTMLElement {
   }
 }
 
-if (!customElements.get("chip-tabs")) customElements.define("chip-tabs", ChipTabs);
+if (!customElements.get("chip-tabs"))
+  customElements.define("chip-tabs", ChipTabs);

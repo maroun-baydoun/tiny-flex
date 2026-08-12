@@ -20,7 +20,11 @@ export class SnippetCopyButton extends HTMLElement {
     this.#label = button.textContent;
     button.addEventListener("click", async () => {
       if (!this.#text) return;
-      try { await navigator.clipboard.writeText(this.#text); } catch { return; }
+      try {
+        await navigator.clipboard.writeText(this.#text);
+      } catch {
+        return;
+      }
       button.textContent = "Copied";
       button.setAttribute("aria-label", "Snippet copied");
       window.setTimeout(() => {
@@ -32,8 +36,13 @@ export class SnippetCopyButton extends HTMLElement {
     this.#button = button;
   }
 
-  set clipboardText(value: string) { this.#text = value; }
-  get clipboardText() { return this.#text; }
+  set clipboardText(value: string) {
+    this.#text = value;
+  }
+  get clipboardText() {
+    return this.#text;
+  }
 }
 
-if (!customElements.get("snippet-copy-button")) customElements.define("snippet-copy-button", SnippetCopyButton);
+if (!customElements.get("snippet-copy-button"))
+  customElements.define("snippet-copy-button", SnippetCopyButton);

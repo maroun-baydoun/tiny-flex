@@ -12,14 +12,21 @@ export abstract class TinyElement extends HTMLElement {
     this.setStyleProperty = this.setStyleProperty.bind(this);
   }
 
-  static getCss(): string { return ""; }
+  static getCss(): string {
+    return "";
+  }
 
   setStyleProperty(property: string, value: string | null): void {
     if (value === null) this.style.removeProperty(property);
     else this.style.setProperty(property, value);
   }
 
-  attributeChangedCallback(name: string, oldValue: string | null, newValue: string | null): void {
-    if (oldValue !== newValue) this.setStyleProperty(getCssVariableName(name), newValue);
+  attributeChangedCallback(
+    name: string,
+    oldValue: string | null,
+    newValue: string | null,
+  ): void {
+    if (oldValue !== newValue)
+      this.setStyleProperty(getCssVariableName(name), newValue);
   }
 }

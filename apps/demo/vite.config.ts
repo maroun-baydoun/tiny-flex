@@ -9,7 +9,9 @@ export default defineConfig({
   plugins: [tailwindcss(), demoCodePlugin(snippets)],
   resolve: {
     alias: {
-      "tiny-flex": fileURLToPath(new URL("../../packages/tiny-flex/src/index.ts", import.meta.url)),
+      "tiny-flex": fileURLToPath(
+        new URL("../../packages/tiny-flex/src/index.ts", import.meta.url),
+      ),
     },
   },
 });

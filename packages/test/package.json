@@ -2,7 +2,10 @@
   "name": "@tiny-flex/test",
   "private": true,
   "type": "module",
-  "scripts": {"test": "vitest run", "test:watch": "vitest"},
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
   "devDependencies": {
     "@types/jsdom": "catalog:",
     "jsdom": "catalog:",

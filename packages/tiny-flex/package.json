@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "description": "Flexbox layout for the modern web",
   "type": "module",
-  "files": ["dist", "README.md", "LICENSE.md", "custom-elements.json"],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE.md",
+    "custom-elements.json"
+  ],
   "main": "./dist/tiny-flex.js",
   "module": "./dist/tiny-flex.js",
   "types": "./dist/index.d.ts",
@@ -23,10 +28,21 @@
   },
   "customElements": "custom-elements.json",
   "sideEffects": true,
-  "keywords": ["flexbox", "web components"],
-  "author": {"name": "Maroun Baydoun", "url": "https://maroun-baydoun.com/"},
-  "repository": {"type": "git", "url": "git+https://github.com/maroun-baydoun/tiny-flex.git"},
-  "bugs": {"url": "https://github.com/maroun-baydoun/tiny-flex/issues"},
+  "keywords": [
+    "flexbox",
+    "web components"
+  ],
+  "author": {
+    "name": "Maroun Baydoun",
+    "url": "https://maroun-baydoun.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maroun-baydoun/tiny-flex.git"
+  },
+  "bugs": {
+    "url": "https://github.com/maroun-baydoun/tiny-flex/issues"
+  },
   "homepage": "https://dev.maroun-baydoun.com/tiny-flex/",
   "license": "MIT",
   "scripts": {

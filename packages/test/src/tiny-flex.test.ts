@@ -5,7 +5,9 @@ function element<T extends HTMLElement>(tag: string): T {
 }
 
 describe("tiny-flex custom elements", () => {
-  beforeEach(() => { document.body.innerHTML = ""; });
+  beforeEach(() => {
+    document.body.innerHTML = "";
+  });
 
   it("registers both public elements", () => {
     expect(customElements.get("flex-container")).toBeDefined();
@@ -21,7 +23,9 @@ describe("tiny-flex custom elements", () => {
     expect(container.style.getPropertyValue("--tf-direction")).toBe("column");
     expect(container.style.getPropertyValue("--tf-gap")).toBe("1rem");
     expect(container.shadowRoot?.querySelector("slot")).toBeTruthy();
-    expect(container.shadowRoot?.querySelector("style")?.textContent).toContain("flex-direction");
+    expect(container.shadowRoot?.querySelector("style")?.textContent).toContain(
+      "flex-direction",
+    );
   });
 
   it("removes CSS variables when attributes are removed", () => {

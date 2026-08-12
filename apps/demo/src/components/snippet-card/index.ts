@@ -32,4 +32,5 @@ export class SnippetCard extends HTMLElement {
   }
 }
 
-if (!customElements.get("snippet-card")) customElements.define("snippet-card", SnippetCard);
+if (!customElements.get("snippet-card"))
+  customElements.define("snippet-card", SnippetCard);
