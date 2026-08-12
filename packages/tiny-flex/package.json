@@ -1,0 +1,52 @@
+{
+  "name": "tiny-flex",
+  "version": "1.0.0",
+  "description": "Flexbox layout for the modern web",
+  "type": "module",
+  "files": ["dist", "README.md", "LICENSE.md", "custom-elements.json"],
+  "main": "./dist/tiny-flex.js",
+  "module": "./dist/tiny-flex.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/tiny-flex.js"
+    },
+    "./container": {
+      "types": "./dist/container.d.ts",
+      "import": "./dist/tiny-flex.js"
+    },
+    "./item": {
+      "types": "./dist/item.d.ts",
+      "import": "./dist/tiny-flex.js"
+    }
+  },
+  "customElements": "custom-elements.json",
+  "sideEffects": true,
+  "keywords": ["flexbox", "web components"],
+  "author": {"name": "Maroun Baydoun", "url": "https://maroun-baydoun.com/"},
+  "repository": {"type": "git", "url": "git+https://github.com/maroun-baydoun/tiny-flex.git"},
+  "bugs": {"url": "https://github.com/maroun-baydoun/tiny-flex/issues"},
+  "homepage": "https://dev.maroun-baydoun.com/tiny-flex/",
+  "license": "MIT",
+  "scripts": {
+    "build:clean": "rimraf dist",
+    "build:js": "vite build",
+    "build:types": "tsc --emitDeclarationOnly --declaration --declarationDir dist --project tsconfig.json",
+    "build": "pnpm run build:clean && pnpm run build:js && pnpm run build:types",
+    "prepublishOnly": "pnpm build",
+    "release:patch": "npm version patch",
+    "release:minor": "npm version minor",
+    "release:major": "npm version major",
+    "release:beta": "npm version prerelease --preid beta",
+    "release:beta-major": "npm version premajor --preid beta",
+    "release:beta-minor": "npm version preminor --preid beta",
+    "release:beta-patch": "npm version prepatch --preid beta"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "rimraf": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:"
+  }
+}
