@@ -58,7 +58,7 @@
   pre { margin: 0; }
   code { font-family: "SFMono-Regular", ui-monospace, "Cascadia Mono", "Segoe UI Mono", Menlo, Monaco, Consolas, monospace; }
 
-  main { @apply flex flex-1 flex-col items-start gap-12 py-10 sm:py-14 lg:py-20; }
+  main { @apply flex flex-1 flex-col items-start gap-0 py-10 sm:py-14 lg:py-20; }
 }
 
 @layer components {
@@ -76,21 +76,23 @@
   .section-header-intro { @apply mt-3 text-base leading-7 text-muted sm:mt-4 sm:text-lg; }
 
   .demo-card {
-    @apply w-full min-w-0 overflow-hidden rounded-2xl border border-border/80 bg-surface-elevated/80 p-5 shadow-2xl shadow-black/20 md:p-10;
+    @apply min-w-0 rounded-2xl border border-border/80 bg-surface-elevated/80 p-4 transition-colors;
   }
 
-  .demo-grid { @apply grid w-full gap-4 xl:grid-cols-3; }
+  .demo-grid { @apply grid gap-4; @apply md:grid-cols-2 xl:grid-cols-3; }
   .demo-card-header { @apply flex flex-wrap items-start justify-between gap-3; }
   .demo-card-header h4 { @apply text-sm font-semibold uppercase tracking-[0.2em] text-foreground; }
   .demo-card-header code { @apply text-xs text-accent; }
   .demo-card-copy { @apply mt-3 min-h-14 text-sm leading-6 text-muted; }
   .demo-card snippet-card { @apply mt-6; }
-  .demo-card snippet-card, .demo-card pre { @apply max-w-full min-w-0; }
 
-  .demo-layout { @apply min-h-64 max-w-full; }
+  .demo-layout { @apply min-h-64 w-full; }
   .demo-item { @apply flex min-h-28 items-center justify-center rounded-xl text-2xl font-semibold; }
   .demo-column .demo-item { width: 10rem; min-height: 4rem; }
-  .demo-alignment .demo-item { width: 4rem; min-height: 4rem; }
+  .demo-alignment .demo-item { min-height: 4rem; @apply text-base; }
+  .demo-diagonal { @apply items-start; }
+  .demo-diagonal .demo-item { @apply text-base; }
+  .demo-wrap .demo-item, .demo-order .demo-item { min-height: 4rem; @apply text-base; }
   .item-one { @apply bg-cyan-950 text-cyan-100; }
   .item-two { @apply bg-accent text-accent-foreground; }
   .item-three { @apply bg-sky-900 text-sky-100; }
@@ -99,9 +101,8 @@
     @apply w-full overflow-x-auto rounded-2xl border border-border/80 bg-surface-elevated/80 p-5 text-sm leading-6 text-snippet-foreground;
   }
 
-  .attribute-grid { @apply grid gap-4 md:grid-cols-2; }
-  .import-grid { @apply grid gap-4 md:grid-cols-2; }
-  .import-card { @apply rounded-2xl border border-border/80 bg-surface-elevated/80 p-4; }
+  .attribute-grid, .import-grid { @apply grid gap-4 md:grid-cols-2; }
+  .import-card { @apply min-w-0 rounded-2xl border border-border/80 bg-surface-elevated/80 p-4; }
   .import-card h4 { @apply text-sm font-semibold uppercase tracking-[0.2em] text-foreground; }
   .import-card > p { @apply mt-3 text-sm leading-6 text-muted; }
   .import-card snippet-card { @apply mt-5; }

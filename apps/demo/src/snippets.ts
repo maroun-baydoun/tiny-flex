@@ -29,4 +29,22 @@ export const snippets = {
   <flex-item basis="4rem">Center</flex-item>
   <flex-item basis="4rem">End</flex-item>
 </flex-container>`,
+  "diagonal-layout": `<flex-container align-items="flex-start" gap="1rem">
+  <flex-item basis="5rem">One</flex-item>
+  <flex-item basis="5rem" align-self="center">Two</flex-item>
+  <flex-item basis="5rem" align-self="flex-end">Three</flex-item>
+</flex-container>`,
+  "wrap-layout": `<flex-container wrap="wrap" gap="1rem">
+  <flex-item basis="7rem">One</flex-item>
+  <flex-item basis="7rem">Two</flex-item>
+  <flex-item basis="7rem">Three</flex-item>
+  <flex-item basis="7rem">Four</flex-item>
+  <flex-item basis="7rem">Five</flex-item>
+  <flex-item basis="7rem">Six</flex-item>
+</flex-container>`,
+  "order-layout": `<flex-container align-items="center" justify-content="center" gap="1rem">
+  <flex-item basis="5rem" order="3">One</flex-item>
+  <flex-item basis="5rem" order="1">Two</flex-item>
+  <flex-item basis="5rem" order="2">Three</flex-item>
+</flex-container>`,
 } as const;

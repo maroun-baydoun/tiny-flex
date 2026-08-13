@@ -61,249 +61,367 @@
             <snippet-copy-button>Copy</snippet-copy-button>
           </snippet-card>
         </section>
+        <section
+          id="demo"
+          class="page-section"
+          data-project-specific
+          aria-labelledby="demo-heading"
+        >
+          <div class="section-header">
+            <h3 id="demo-heading">Demo</h3>
+            <p class="section-header-intro">
+              Here are a few examples of what you can build with tiny-flex.
+            </p>
+          </div>
+
+          <div class="demo-grid">
+            <article class="demo-card">
+              <div class="demo-card-header">
+                <h4>Grow items in a row</h4>
+                <code>grow</code>
+              </div>
+              <p class="demo-card-copy">
+                Distribute available space between items with different
+                <code>grow</code> values.
+              </p>
+              <flex-container class="demo-layout" gap="1rem" wrap="wrap">
+                <flex-item class="demo-item item-one" grow="1">One</flex-item>
+                <flex-item class="demo-item item-two" grow="2">Two</flex-item>
+                <flex-item class="demo-item item-three" grow="1"
+                  >Three</flex-item
+                >
+              </flex-container>
+              <snippet-card>
+                <pre><code data-code="row-layout" data-language="html"></code></pre>
+                <snippet-copy-button>Copy</snippet-copy-button></snippet-card
+              >
+            </article>
+
+            <article class="demo-card">
+              <div class="demo-card-header">
+                <h4>Stack items in a column</h4>
+                <code>direction</code>
+              </div>
+              <p class="demo-card-copy">
+                Change the main axis with <code>direction</code> and align the
+                stack with <code>align-items</code>.
+              </p>
+              <flex-container
+                class="demo-layout demo-column"
+                direction="column"
+                align-items="center"
+                gap="0.75rem"
+              >
+                <flex-item class="demo-item item-one" basis="4rem"
+                  >Top</flex-item
+                >
+                <flex-item class="demo-item item-two" basis="4rem"
+                  >Middle</flex-item
+                >
+                <flex-item class="demo-item item-three" basis="4rem"
+                  >Bottom</flex-item
+                >
+              </flex-container>
+              <snippet-card>
+                <pre><code data-code="column-layout" data-language="html"></code></pre>
+                <snippet-copy-button>Copy</snippet-copy-button></snippet-card
+              >
+            </article>
+
+            <article class="demo-card">
+              <div class="demo-card-header">
+                <h4>Space items across a row</h4>
+                <code>justify-content</code>
+              </div>
+              <p class="demo-card-copy">
+                Distribute items along the main axis with
+                <code>justify-content</code>.
+              </p>
+              <flex-container
+                class="demo-layout demo-alignment"
+                align-items="center"
+                justify-content="space-between"
+                gap="1rem"
+              >
+                <flex-item class="demo-item item-one" basis="4rem"
+                  >Start</flex-item
+                >
+                <flex-item class="demo-item item-two" basis="4rem"
+                  >Center</flex-item
+                >
+                <flex-item class="demo-item item-three" basis="4rem"
+                  >End</flex-item
+                >
+              </flex-container>
+              <snippet-card>
+                <pre><code data-code="alignment" data-language="html"></code></pre>
+                <snippet-copy-button>Copy</snippet-copy-button></snippet-card
+              >
+            </article>
+
+            <article class="demo-card">
+              <div class="demo-card-header">
+                <h4>Place items on a diagonal</h4>
+                <code>align-self</code>
+              </div>
+              <p class="demo-card-copy">
+                Override the container alignment for individual items with
+                <code>align-self</code>.
+              </p>
+              <flex-container
+                class="demo-layout demo-diagonal"
+                align-items="flex-start"
+                gap="1rem"
+              >
+                <flex-item class="demo-item item-one" basis="5rem"
+                  >One</flex-item
+                >
+                <flex-item
+                  class="demo-item item-two"
+                  basis="5rem"
+                  align-self="center"
+                  >Two</flex-item
+                >
+                <flex-item
+                  class="demo-item item-three"
+                  basis="5rem"
+                  align-self="flex-end"
+                  >Three</flex-item
+                >
+              </flex-container>
+              <snippet-card>
+                <pre><code data-code="diagonal-layout" data-language="html"></code></pre>
+                <snippet-copy-button>Copy</snippet-copy-button></snippet-card
+              >
+            </article>
+
+            <article class="demo-card">
+              <div class="demo-card-header">
+                <h4>Wrap items onto new lines</h4>
+                <code>wrap</code>
+              </div>
+              <p class="demo-card-copy">
+                Let items continue on another line when the row runs out of
+                space with <code>wrap</code>.
+              </p>
+              <flex-container
+                class="demo-layout demo-wrap"
+                wrap="wrap"
+                gap="1rem"
+              >
+                <flex-item class="demo-item item-one" basis="7rem"
+                  >One</flex-item
+                >
+                <flex-item class="demo-item item-two" basis="7rem"
+                  >Two</flex-item
+                >
+                <flex-item class="demo-item item-three" basis="7rem"
+                  >Three</flex-item
+                >
+                <flex-item class="demo-item item-one" basis="7rem"
+                  >Four</flex-item
+                >
+                <flex-item class="demo-item item-two" basis="7rem"
+                  >Five</flex-item
+                >
+                <flex-item class="demo-item item-three" basis="7rem"
+                  >Six</flex-item
+                >
+              </flex-container>
+              <snippet-card>
+                <pre><code data-code="wrap-layout" data-language="html"></code></pre>
+                <snippet-copy-button>Copy</snippet-copy-button></snippet-card
+              >
+            </article>
+
+            <article class="demo-card">
+              <div class="demo-card-header">
+                <h4>Change the visual order</h4>
+                <code>order</code>
+              </div>
+              <p class="demo-card-copy">
+                Rearrange items visually with <code>order</code> while keeping
+                their HTML in its original sequence.
+              </p>
+              <flex-container
+                class="demo-layout demo-order"
+                align-items="center"
+                justify-content="center"
+                gap="1rem"
+              >
+                <flex-item class="demo-item item-one" basis="5rem" order="3"
+                  >One</flex-item
+                >
+                <flex-item class="demo-item item-two" basis="5rem" order="1"
+                  >Two</flex-item
+                >
+                <flex-item class="demo-item item-three" basis="5rem" order="2"
+                  >Three</flex-item
+                >
+              </flex-container>
+              <snippet-card>
+                <pre><code data-code="order-layout" data-language="html"></code></pre>
+                <snippet-copy-button>Copy</snippet-copy-button></snippet-card
+              >
+            </article>
+          </div>
+        </section>
+
+        <section
+          class="page-section install-section"
+          aria-labelledby="install-heading"
+        >
+          <div class="section-header">
+            <h3 id="install-heading">Install</h3>
+            <p class="section-header-intro">
+              Install tiny-flex with the package manager of your choice.
+            </p>
+          </div>
+          <chip-tabs data-default-tab="npm" id="install-tabs">
+            <div data-tablist aria-label="Package manager">
+              <button type="button" data-tab="npm">npm</button>
+              <button type="button" data-tab="pnpm">pnpm</button>
+              <button type="button" data-tab="yarn">yarn</button>
+            </div>
+            <div data-tab-panels>
+              <snippet-card data-tab-panel="npm" data-active="true">
+                <pre><code data-code="install-npm" data-language="shell"></code></pre>
+                <snippet-copy-button>Copy</snippet-copy-button></snippet-card
+              >
+              <snippet-card data-tab-panel="pnpm" data-active="false">
+                <pre><code data-code="install-pnpm" data-language="shell"></code></pre>
+                <snippet-copy-button>Copy</snippet-copy-button></snippet-card
+              >
+              <snippet-card data-tab-panel="yarn" data-active="false">
+                <pre><code data-code="install-yarn" data-language="shell"></code></pre>
+                <snippet-copy-button>Copy</snippet-copy-button></snippet-card
+              >
+            </div>
+          </chip-tabs>
+        </section>
+
+        <section
+          class="page-section import-section"
+          data-project-specific
+          aria-labelledby="import-heading"
+        >
+          <div class="section-header">
+            <h3 id="import-heading">Import</h3>
+            <p class="section-header-intro">
+              tiny-flex is an ES module. Import the installed npm package from
+              your application code, or load it directly in the browser with a
+              module script.
+            </p>
+          </div>
+          <div class="import-grid">
+            <article class="import-card">
+              <h4>Bundler import</h4>
+              <p>
+                Use this after installing tiny-flex in a bundler such as Vite or
+                Webpack.
+              </p>
+              <snippet-card>
+                <pre><code data-code="esm-import" data-language="typescript"></code></pre>
+                <snippet-copy-button>Copy</snippet-copy-button></snippet-card
+              >
+            </article>
+            <article class="import-card">
+              <h4>Browser module script</h4>
+              <p>
+                Use this when loading tiny-flex directly in a browser from a
+                CDN.
+              </p>
+              <snippet-card>
+                <pre><code data-code="esm-script" data-language="html"></code></pre>
+                <snippet-copy-button>Copy</snippet-copy-button></snippet-card
+              >
+            </article>
+          </div>
+        </section>
+
+        <section
+          class="page-section attributes-section"
+          data-project-specific
+          aria-labelledby="attributes-heading"
+        >
+          <div class="section-header">
+            <h3 id="attributes-heading">API</h3>
+            <p class="section-header-intro">
+              HTML attributes map to Flexbox properties.
+            </p>
+          </div>
+          <div class="attribute-grid">
+            <article class="attribute-card">
+              <h4>flex-container</h4>
+              <p>
+                Use container attributes to define the axes, alignment, and
+                spacing for its children.
+              </p>
+              <dl class="attribute-list">
+                <div>
+                  <dt>direction</dt>
+                  <dd>
+                    Sets the main axis, such as <code>row</code> or
+                    <code>column</code>.
+                  </dd>
+                </div>
+                <div>
+                  <dt>align-items</dt>
+                  <dd>Aligns children across the cross axis.</dd>
+                </div>
+                <div>
+                  <dt>justify-content</dt>
+                  <dd>Distributes children along the main axis.</dd>
+                </div>
+                <div>
+                  <dt>gap</dt>
+                  <dd>Adds consistent space between children.</dd>
+                </div>
+                <div>
+                  <dt>wrap · flow</dt>
+                  <dd>Controls line wrapping and shorthand flow.</dd>
+                </div>
+              </dl>
+            </article>
+            <article class="attribute-card">
+              <h4>flex-item</h4>
+              <p>
+                Use item attributes to control how each child participates in
+                its container.
+              </p>
+              <dl class="attribute-list">
+                <div>
+                  <dt>flex · grow · shrink</dt>
+                  <dd>Controls flexible sizing when space changes.</dd>
+                </div>
+                <div>
+                  <dt>basis</dt>
+                  <dd>
+                    Sets the initial size before free space is distributed.
+                  </dd>
+                </div>
+                <div>
+                  <dt>order</dt>
+                  <dd>Changes the visual order of an item.</dd>
+                </div>
+                <div>
+                  <dt>align-self</dt>
+                  <dd>Overrides the container’s alignment for one item.</dd>
+                </div>
+              </dl>
+            </article>
+          </div>
+        </section>
       </main>
-
-      <section
-        id="demo"
-        class="page-section"
-        data-project-specific
-        aria-labelledby="demo-heading"
-      >
-        <div class="section-header">
-          <h3 id="demo-heading">Demo</h3>
-          <p class="section-header-intro">
-            Here are a few examples of what you can build with tiny-flex.
-          </p>
-        </div>
-
-        <div class="demo-grid">
-          <article class="demo-card">
-            <div class="demo-card-header">
-              <h4>Grow items in a row</h4>
-              <code>grow</code>
-            </div>
-            <p class="demo-card-copy">
-              Distribute available space between items with different
-              <code>grow</code> values.
-            </p>
-            <flex-container class="demo-layout" gap="1rem" wrap="wrap">
-              <flex-item class="demo-item item-one" grow="1">One</flex-item>
-              <flex-item class="demo-item item-two" grow="2">Two</flex-item>
-              <flex-item class="demo-item item-three" grow="1">Three</flex-item>
-            </flex-container>
-            <snippet-card>
-              <pre><code data-code="row-layout" data-language="html"></code></pre>
-              <snippet-copy-button>Copy</snippet-copy-button></snippet-card
-            >
-          </article>
-
-          <article class="demo-card">
-            <div class="demo-card-header">
-              <h4>Stack items in a column</h4>
-              <code>direction</code>
-            </div>
-            <p class="demo-card-copy">
-              Change the main axis with <code>direction</code> and align the
-              stack with <code>align-items</code>.
-            </p>
-            <flex-container
-              class="demo-layout demo-column"
-              direction="column"
-              align-items="center"
-              gap="0.75rem"
-            >
-              <flex-item class="demo-item item-one" basis="4rem">Top</flex-item>
-              <flex-item class="demo-item item-two" basis="4rem"
-                >Middle</flex-item
-              >
-              <flex-item class="demo-item item-three" basis="4rem"
-                >Bottom</flex-item
-              >
-            </flex-container>
-            <snippet-card>
-              <pre><code data-code="column-layout" data-language="html"></code></pre>
-              <snippet-copy-button>Copy</snippet-copy-button></snippet-card
-            >
-          </article>
-
-          <article class="demo-card">
-            <div class="demo-card-header">
-              <h4>Space items across a row</h4>
-              <code>justify-content</code>
-            </div>
-            <p class="demo-card-copy">
-              Distribute items along the main axis with
-              <code>justify-content</code>.
-            </p>
-            <flex-container
-              class="demo-layout demo-alignment"
-              align-items="center"
-              justify-content="space-between"
-              gap="1rem"
-            >
-              <flex-item class="demo-item item-one" basis="4rem"
-                >Start</flex-item
-              >
-              <flex-item class="demo-item item-two" basis="4rem"
-                >Center</flex-item
-              >
-              <flex-item class="demo-item item-three" basis="4rem"
-                >End</flex-item
-              >
-            </flex-container>
-            <snippet-card>
-              <pre><code data-code="alignment" data-language="html"></code></pre>
-              <snippet-copy-button>Copy</snippet-copy-button></snippet-card
-            >
-          </article>
-        </div>
-      </section>
-
-      <section
-        class="page-section install-section"
-        aria-labelledby="install-heading"
-      >
-        <div class="section-header">
-          <h3 id="install-heading">Install</h3>
-          <p class="section-header-intro">
-            Install tiny-flex with the package manager of your choice.
-          </p>
-        </div>
-        <chip-tabs data-default-tab="npm" id="install-tabs">
-          <div data-tablist aria-label="Package manager">
-            <button type="button" data-tab="npm">npm</button>
-            <button type="button" data-tab="pnpm">pnpm</button>
-            <button type="button" data-tab="yarn">yarn</button>
-          </div>
-          <div data-tab-panels>
-            <snippet-card data-tab-panel="npm" data-active="true">
-              <pre><code data-code="install-npm" data-language="shell"></code></pre>
-              <snippet-copy-button>Copy</snippet-copy-button></snippet-card
-            >
-            <snippet-card data-tab-panel="pnpm" data-active="false">
-              <pre><code data-code="install-pnpm" data-language="shell"></code></pre>
-              <snippet-copy-button>Copy</snippet-copy-button></snippet-card
-            >
-            <snippet-card data-tab-panel="yarn" data-active="false">
-              <pre><code data-code="install-yarn" data-language="shell"></code></pre>
-              <snippet-copy-button>Copy</snippet-copy-button></snippet-card
-            >
-          </div>
-        </chip-tabs>
-      </section>
-
-      <section
-        class="page-section import-section"
-        data-project-specific
-        aria-labelledby="import-heading"
-      >
-        <div class="section-header">
-          <h3 id="import-heading">Import</h3>
-          <p class="section-header-intro">
-            tiny-flex is an ES module. Import the installed npm package from
-            your application code, or load it directly in the browser with a
-            module script.
-          </p>
-        </div>
-        <div class="import-grid">
-          <article class="import-card">
-            <h4>Bundler import</h4>
-            <p>
-              Use this after installing tiny-flex in a bundler such as Vite or
-              Webpack.
-            </p>
-            <snippet-card>
-              <pre><code data-code="esm-import" data-language="typescript"></code></pre>
-              <snippet-copy-button>Copy</snippet-copy-button></snippet-card
-            >
-          </article>
-          <article class="import-card">
-            <h4>Browser module script</h4>
-            <p>
-              Use this when loading tiny-flex directly in a browser from a CDN.
-            </p>
-            <snippet-card>
-              <pre><code data-code="esm-script" data-language="html"></code></pre>
-              <snippet-copy-button>Copy</snippet-copy-button></snippet-card
-            >
-          </article>
-        </div>
-      </section>
-
-      <section
-        class="page-section attributes-section"
-        data-project-specific
-        aria-labelledby="attributes-heading"
-      >
-        <div class="section-header">
-          <p class="eyebrow">API</p>
-          <h3 id="attributes-heading">
-            HTML attributes map to Flexbox properties.
-          </h3>
-        </div>
-        <div class="attribute-grid">
-          <article class="attribute-card">
-            <h4>flex-container</h4>
-            <p>
-              Use container attributes to define the axes, alignment, and
-              spacing for its children.
-            </p>
-            <dl class="attribute-list">
-              <div>
-                <dt>direction</dt>
-                <dd>
-                  Sets the main axis, such as <code>row</code> or
-                  <code>column</code>.
-                </dd>
-              </div>
-              <div>
-                <dt>align-items</dt>
-                <dd>Aligns children across the cross axis.</dd>
-              </div>
-              <div>
-                <dt>justify-content</dt>
-                <dd>Distributes children along the main axis.</dd>
-              </div>
-              <div>
-                <dt>gap</dt>
-                <dd>Adds consistent space between children.</dd>
-              </div>
-              <div>
-                <dt>wrap · flow</dt>
-                <dd>Controls line wrapping and shorthand flow.</dd>
-              </div>
-            </dl>
-          </article>
-          <article class="attribute-card">
-            <h4>flex-item</h4>
-            <p>
-              Use item attributes to control how each child participates in its
-              container.
-            </p>
-            <dl class="attribute-list">
-              <div>
-                <dt>flex · grow · shrink</dt>
-                <dd>Controls flexible sizing when space changes.</dd>
-              </div>
-              <div>
-                <dt>basis</dt>
-                <dd>Sets the initial size before free space is distributed.</dd>
-              </div>
-              <div>
-                <dt>order</dt>
-                <dd>Changes the visual order of an item.</dd>
-              </div>
-              <div>
-                <dt>align-self</dt>
-                <dd>Overrides the container’s alignment for one item.</dd>
-              </div>
-            </dl>
-          </article>
-        </div>
-      </section>
 
       <footer>
         <nav>
+          <a
+            href="https://dev.maroun-baydoun.com/"
+            target="_blank"
+            rel="noreferrer"
+            >See other projects</a
+          >
           <a
             href="https://www.npmjs.com/package/tiny-flex"
             target="_blank"
