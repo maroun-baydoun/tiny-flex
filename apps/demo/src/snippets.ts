@@ -61,6 +61,25 @@ export const snippets = {
   <flex-item basis="5rem" order="1">Two</flex-item>
   <flex-item basis="5rem" order="2">Three</flex-item>
 </flex-container>`,
+  "nested-layout": `<flex-container align-items="stretch" gap="1rem">
+  <flex-item basis="8rem">
+    <strong>Projects</strong>
+    <span>Overview</span>
+    <span>Activity</span>
+  </flex-item>
+  <flex-item as-child grow="1" basis="12rem">
+    <flex-container direction="column" gap="0.75rem">
+      <flex-item basis="3rem">
+        <strong>Project overview</strong>
+        <button type="button">Share</button>
+      </flex-item>
+      <flex-item grow="1">
+        <span>Tasks completed</span>
+        <strong>24 of 32</strong>
+      </flex-item>
+    </flex-container>
+  </flex-item>
+</flex-container>`,
   "as-child-container": `<flex-container
   as-child
   direction="row"

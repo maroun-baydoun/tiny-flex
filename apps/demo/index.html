@@ -354,6 +354,51 @@
         </section>
 
         <section
+          class="page-section nested-section"
+          data-project-specific
+          aria-labelledby="nested-heading"
+        >
+          <div class="section-header">
+            <h3 id="nested-heading">Nest layouts</h3>
+            <p class="section-header-intro">
+              A nested <code>flex-container</code> can be an item in an outer
+              layout while arranging its own children.
+            </p>
+          </div>
+          <flex-container
+            class="nested-layout"
+            align-items="stretch"
+            gap="1rem"
+          >
+            <flex-item class="nested-sidebar" basis="8rem">
+              <strong>Projects</strong>
+              <span>Overview</span>
+              <span>Activity</span>
+            </flex-item>
+            <flex-item as-child grow="1" basis="12rem">
+              <flex-container
+                class="nested-content"
+                direction="column"
+                gap="0.75rem"
+              >
+                <flex-item class="nested-toolbar" basis="3rem">
+                  <strong>Project overview</strong>
+                  <button type="button">Share</button>
+                </flex-item>
+                <flex-item class="nested-summary" grow="1">
+                  <span>Tasks completed</span>
+                  <strong>24 of 32</strong>
+                </flex-item>
+              </flex-container>
+            </flex-item>
+          </flex-container>
+          <snippet-card>
+            <pre><code data-code="nested-layout" data-language="html"></code></pre>
+            <snippet-copy-button>Copy</snippet-copy-button></snippet-card
+          >
+        </section>
+
+        <section
           class="page-section install-section"
           aria-labelledby="install-heading"
         >

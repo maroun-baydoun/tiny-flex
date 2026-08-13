@@ -93,6 +93,16 @@
   .demo-diagonal { @apply items-start; }
   .demo-diagonal .demo-item { @apply text-base; }
   .demo-wrap .demo-item, .demo-order .demo-item { min-height: 4rem; @apply text-base; }
+  .nested-layout { @apply min-h-64 items-stretch; }
+  .nested-sidebar { @apply flex min-w-0 flex-col gap-3 rounded-xl bg-cyan-950 px-4 py-5 text-sm text-cyan-100; }
+  .nested-sidebar strong { @apply text-base text-cyan-50; }
+  .nested-content { @apply min-w-0 rounded-xl border border-border/80 bg-surface-elevated/80 p-4; }
+  .nested-toolbar { @apply flex items-center justify-between rounded-lg border border-border/80 px-4; }
+  .nested-toolbar strong { @apply min-w-0 truncate text-sm text-foreground; }
+  .nested-toolbar button { @apply shrink-0 rounded-md bg-accent px-3 py-1.5 text-xs font-semibold text-accent-foreground; }
+  .nested-summary { @apply flex min-h-24 flex-col justify-center rounded-lg bg-surface px-4; }
+  .nested-summary span { @apply text-sm text-muted; }
+  .nested-summary strong { @apply mt-1 text-2xl text-foreground; }
   .as-child-layout { @apply min-h-32 items-center rounded-xl border border-border/80 bg-surface-elevated/80 px-4 py-5; }
   .as-child-grid { @apply grid gap-4 md:grid-cols-2; }
   .as-child-card { @apply min-w-0 rounded-2xl border border-border/80 bg-surface-elevated/80 p-4; }
