@@ -12,20 +12,6 @@
   "main": "./dist/tiny-flex.js",
   "module": "./dist/tiny-flex.js",
   "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/tiny-flex.js"
-    },
-    "./container": {
-      "types": "./dist/container.d.ts",
-      "import": "./dist/tiny-flex.js"
-    },
-    "./item": {
-      "types": "./dist/item.d.ts",
-      "import": "./dist/tiny-flex.js"
-    }
-  },
   "customElements": "custom-elements.json",
   "sideEffects": true,
   "keywords": [
