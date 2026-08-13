@@ -268,6 +268,92 @@
         </section>
 
         <section
+          class="page-section as-child-section"
+          data-project-specific
+          aria-labelledby="as-child-heading"
+        >
+          <div class="section-header">
+            <h3 id="as-child-heading">Remove the component from the layout</h3>
+            <p class="section-header-intro">
+              <code>as-child</code> removes the component from the layout and
+              applies its Flexbox styles to the slotted child. This is useful
+              when your layout contains more complex elements that should keep
+              their own semantics. The name is inspired by
+              <a
+                href="https://www.radix-ui.com/primitives/docs/guides/composition"
+                target="_blank"
+                rel="noreferrer"
+                >Radix UI’s <code>asChild</code> composition pattern</a
+              >.
+            </p>
+          </div>
+          <div class="as-child-grid">
+            <article class="as-child-card">
+              <div class="demo-card-header">
+                <h4>Use an existing element as the container</h4>
+                <code>flex-container</code>
+              </div>
+              <p class="demo-card-copy">
+                The slotted element becomes the flex container.
+              </p>
+              <flex-container
+                as-child
+                direction="row"
+                align-items="center"
+                justify-content="space-between"
+                gap="1rem"
+              >
+                <nav class="as-child-nav" aria-label="Account navigation">
+                  <strong>Workspace</strong>
+                  <div>
+                    <a href="#attributes-heading">Overview</a>
+                    <a href="#attributes-heading">Settings</a>
+                  </div>
+                </nav>
+              </flex-container>
+              <snippet-card>
+                <pre><code data-code="as-child-container" data-language="html"></code></pre>
+                <snippet-copy-button>Copy</snippet-copy-button></snippet-card
+              >
+            </article>
+
+            <article class="as-child-card">
+              <div class="demo-card-header">
+                <h4>Use an existing element as the item</h4>
+                <code>flex-item</code>
+              </div>
+              <p class="demo-card-copy">
+                The slotted element becomes the flex item.
+              </p>
+              <flex-container
+                class="as-child-layout"
+                align-items="center"
+                gap="1rem"
+              >
+                <flex-item as-child basis="2.5rem">
+                  <span class="as-child-status" aria-hidden="true">!</span>
+                </flex-item>
+                <flex-item as-child grow="1" basis="12rem">
+                  <div class="as-child-message">
+                    <strong>Changes saved</strong>
+                    <span>Your workspace is up to date.</span>
+                  </div>
+                </flex-item>
+                <flex-item as-child basis="auto">
+                  <button class="as-child-dismiss" type="button">
+                    Dismiss
+                  </button>
+                </flex-item>
+              </flex-container>
+              <snippet-card>
+                <pre><code data-code="as-child" data-language="html"></code></pre>
+                <snippet-copy-button>Copy</snippet-copy-button></snippet-card
+              >
+            </article>
+          </div>
+        </section>
+
+        <section
           class="page-section install-section"
           aria-labelledby="install-heading"
         >
@@ -405,6 +491,13 @@
                   <dt>column-gap</dt>
                   <dd>Sets the space between columns.</dd>
                 </div>
+                <div>
+                  <dt>as-child</dt>
+                  <dd>
+                    Removes the container wrapper from layout and applies its
+                    flex styles to the slotted element.
+                  </dd>
+                </div>
               </dl>
             </article>
             <article class="attribute-card">
@@ -431,6 +524,13 @@
                 <div>
                   <dt>align-self</dt>
                   <dd>Overrides the container’s alignment for one item.</dd>
+                </div>
+                <div>
+                  <dt>as-child</dt>
+                  <dd>
+                    Removes the item wrapper from layout and applies its flex
+                    styles to the slotted element.
+                  </dd>
                 </div>
               </dl>
             </article>

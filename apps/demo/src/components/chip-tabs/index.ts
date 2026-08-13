@@ -4,7 +4,9 @@ export class ChipTabs extends HTMLElement {
   connectedCallback() {
     const buttons = [...this.querySelectorAll<HTMLButtonElement>("[data-tab]")];
     const panels = [...this.querySelectorAll<HTMLElement>("[data-tab-panel]")];
-    if (!buttons.length || !panels.length) return;
+    if (!buttons.length || !panels.length) {
+      return;
+    }
     const activate = (tab: string) => {
       buttons.forEach((button) => {
         const active = button.dataset.tab === tab;
@@ -39,8 +41,9 @@ export class ChipTabs extends HTMLElement {
         activate(button.dataset.tab ?? ""),
       );
       button.addEventListener("keydown", (event) => {
-        if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key))
+        if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) {
           return;
+        }
         event.preventDefault();
         const next =
           event.key === "Home"
@@ -59,5 +62,6 @@ export class ChipTabs extends HTMLElement {
   }
 }
 
-if (!customElements.get("chip-tabs"))
+if (!customElements.get("chip-tabs")) {
   customElements.define("chip-tabs", ChipTabs);
+}

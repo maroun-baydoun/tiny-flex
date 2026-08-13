@@ -12,14 +12,18 @@ export class SnippetCopyButton extends HTMLElement {
       return;
     }
 
-    if (this.#button) return;
+    if (this.#button) {
+      return;
+    }
 
     const button = document.createElement("button");
     button.type = "button";
     button.textContent = this.textContent?.trim() || "Copy";
     this.#label = button.textContent;
     button.addEventListener("click", async () => {
-      if (!this.#text) return;
+      if (!this.#text) {
+        return;
+      }
       try {
         await navigator.clipboard.writeText(this.#text);
       } catch {
@@ -44,5 +48,6 @@ export class SnippetCopyButton extends HTMLElement {
   }
 }
 
-if (!customElements.get("snippet-copy-button"))
+if (!customElements.get("snippet-copy-button")) {
   customElements.define("snippet-copy-button", SnippetCopyButton);
+}

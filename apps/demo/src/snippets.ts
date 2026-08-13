@@ -29,6 +29,20 @@ export const snippets = {
   <flex-item basis="4rem">Center</flex-item>
   <flex-item basis="4rem">End</flex-item>
 </flex-container>`,
+  "as-child": `<flex-container align-items="center" gap="1rem">
+  <flex-item as-child basis="2.5rem">
+    <span aria-hidden="true">!</span>
+  </flex-item>
+  <flex-item as-child grow="1" basis="12rem">
+    <div>
+      <strong>Changes saved</strong>
+      <span>Your workspace is up to date.</span>
+    </div>
+  </flex-item>
+  <flex-item as-child basis="auto">
+    <button type="button">Dismiss</button>
+  </flex-item>
+</flex-container>`,
   "diagonal-layout": `<flex-container align-items="flex-start" gap="1rem">
   <flex-item basis="5rem">One</flex-item>
   <flex-item basis="5rem" align-self="center">Two</flex-item>
@@ -46,5 +60,20 @@ export const snippets = {
   <flex-item basis="5rem" order="3">One</flex-item>
   <flex-item basis="5rem" order="1">Two</flex-item>
   <flex-item basis="5rem" order="2">Three</flex-item>
+</flex-container>`,
+  "as-child-container": `<flex-container
+  as-child
+  direction="row"
+  align-items="center"
+  justify-content="space-between"
+  gap="1rem"
+>
+  <nav aria-label="Account navigation">
+    <strong>Workspace</strong>
+    <div>
+      <a href="#attributes-heading">Overview</a>
+      <a href="#attributes-heading">Settings</a>
+    </div>
+  </nav>
 </flex-container>`,
 } as const;

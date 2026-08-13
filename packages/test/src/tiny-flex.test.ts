@@ -15,6 +15,24 @@ describe("tiny-flex custom elements", () => {
   });
 
   describe("flex-container", () => {
+    it("assigns a slotted element and exposes its as-child styles", () => {
+      const container = element("flex-container");
+      const slotted = document.createElement("section");
+      container.setAttribute("as-child", "");
+      container.setAttribute("direction", "column");
+      container.append(slotted);
+      document.body.append(container);
+
+      const slot = container.shadowRoot?.querySelector("slot");
+      const styles = container.shadowRoot?.querySelector("style")?.textContent;
+
+      expect(slot?.assignedElements()).toEqual([slotted]);
+      expect(container.style.getPropertyValue("--tf-direction")).toBe("column");
+      expect(styles).toContain(
+        ":host([as-child][direction]) ::slotted(*) { flex-direction: var(--tf-direction); }",
+      );
+    });
+
     it("reflects all attributes to CSS variables and CSS properties", () => {
       const container = element("flex-container");
       const attributes = {
@@ -56,11 +74,17 @@ describe("tiny-flex custom elements", () => {
 
       for (const [name, property] of Object.entries(cssProperties)) {
         expect(styles).toContain(
-          `:host([${name}]) { ${property}: var(--tf-${name}); }`,
+          `:host([${name}]:not([as-child])), :host([as-child][${name}]) ::slotted(*) { ${property}: var(--tf-${name}); }`,
         );
       }
 
-      expect(styles).toContain(":host([inline]) { display: inline-flex; }");
+      expect(styles).toContain(":host([as-child]) { display: contents; }");
+      expect(styles).toContain(
+        ":host(:not([as-child])), :host([as-child]) ::slotted(*) { display: flex; }",
+      );
+      expect(styles).toContain(
+        ":host([inline]:not([as-child])), :host([as-child][inline]) ::slotted(*) { display: inline-flex; }",
+      );
     });
 
     it("removes CSS variables when attributes are removed", () => {
@@ -109,6 +133,24 @@ describe("tiny-flex custom elements", () => {
   });
 
   describe("flex-item", () => {
+    it("assigns a slotted element and exposes its as-child styles", () => {
+      const item = element("flex-item");
+      const slotted = document.createElement("article");
+      item.setAttribute("as-child", "");
+      item.setAttribute("grow", "1");
+      item.append(slotted);
+      document.body.append(item);
+
+      const slot = item.shadowRoot?.querySelector("slot");
+      const styles = item.shadowRoot?.querySelector("style")?.textContent;
+
+      expect(slot?.assignedElements()).toEqual([slotted]);
+      expect(item.style.getPropertyValue("--tf-grow")).toBe("1");
+      expect(styles).toContain(
+        ":host([as-child][grow]) ::slotted(*) { flex-grow: var(--tf-grow); }",
+      );
+    });
+
     it("reflects all attributes to CSS variables and CSS properties", () => {
       const item = element("flex-item");
       const attributes = {
@@ -142,9 +184,11 @@ describe("tiny-flex custom elements", () => {
 
       for (const [name, property] of Object.entries(cssProperties)) {
         expect(styles).toContain(
-          `:host([${name}]) { ${property}: var(--tf-${name}); }`,
+          `:host([${name}]:not([as-child])), :host([as-child][${name}]) ::slotted(*) { ${property}: var(--tf-${name}); }`,
         );
       }
+
+      expect(styles).toContain(":host([as-child]) { display: contents; }");
     });
 
     it("removes CSS variables when attributes are removed", () => {

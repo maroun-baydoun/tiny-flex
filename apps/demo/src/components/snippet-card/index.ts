@@ -5,11 +5,15 @@ export class SnippetCard extends HTMLElement {
   #wired = false;
 
   connectedCallback() {
-    if (this.#wired) return;
+    if (this.#wired) {
+      return;
+    }
 
     const code = this.querySelector<HTMLElement>("code[data-code]");
     const copy = this.querySelector<SnippetCopyButton>("snippet-copy-button");
-    if (!code) return;
+    if (!code) {
+      return;
+    }
     const source = code.textContent ?? "";
     this.toggleAttribute("inline", !source.includes("\n"));
     const title = this.querySelector<HTMLElement>("[data-snippet-title]");
@@ -32,5 +36,6 @@ export class SnippetCard extends HTMLElement {
   }
 }
 
-if (!customElements.get("snippet-card"))
+if (!customElements.get("snippet-card")) {
   customElements.define("snippet-card", SnippetCard);
+}

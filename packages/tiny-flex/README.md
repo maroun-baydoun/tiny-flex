@@ -5,6 +5,10 @@ Flexbox layout for the modern web.
 tiny-flex is a small web components library for building Flexbox layouts with
 `<flex-container>` and `<flex-item>`.
 
+The `as-child` attribute removes the component from the layout and applies its
+Flexbox styles to the slotted child. Its name is inspired by the `asChild`
+convention in Radix UI.
+
 ## Installation
 
 ### npm
@@ -93,6 +97,7 @@ CSS Flexbox properties.
 | `gap` | `gap` | Sets the space between items. |
 | `row-gap` | `row-gap` | Sets the space between rows. |
 | `column-gap` | `column-gap` | Sets the space between columns. |
+| `as-child` | `display: contents` | Removes the container wrapper from layout and applies its flex styles to the slotted element. |
 
 ### `flex-item`
 
@@ -107,6 +112,7 @@ parent container.
 | `basis` | `flex-basis` | Sets the item’s initial size. |
 | `order` | `order` | Changes the item’s visual order. |
 | `align-self` | `align-self` | Overrides the container’s alignment for this item. |
+| `as-child` | `display: contents` | Removes the item wrapper from layout and applies its flex styles to the slotted element. |
 
 ## Demo
 

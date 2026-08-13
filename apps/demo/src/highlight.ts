@@ -19,7 +19,9 @@ const renderHtml = (source: string) =>
   source
     .split(/(<[^>]+>)/g)
     .map((part) => {
-      if (!part.startsWith("<")) return escapeHtml(part);
+      if (!part.startsWith("<")) {
+        return escapeHtml(part);
+      }
       const tag = escapeHtml(part)
         .replace(/(&lt;\/?)([\w-]+)/, '$1<span class="token-keyword">$2</span>')
         .replace(
@@ -34,8 +36,10 @@ export function renderHighlightedCode(
   source: string,
   language: "typescript" | "shell" | "html",
 ) {
-  if (language === "html") return renderHtml(source);
-  if (language === "shell")
+  if (language === "html") {
+    return renderHtml(source);
+  }
+  if (language === "shell") {
     return source
       .split(/(\s+)/)
       .map((part) =>
@@ -49,14 +53,25 @@ export function renderHighlightedCode(
             ),
       )
       .join("");
+  }
   return source
     .split(/(\s+|[{}()[\],;.=])/)
     .map((part) => {
-      if (!part) return "";
-      if (/^\s+$/.test(part)) return escapeHtml(part);
-      if (/^["'`].*["'`]$/.test(part)) return wrap("string", part);
-      if (keywords.has(part)) return wrap("keyword", part);
-      if (/^[{}()[\],;.=]$/.test(part)) return wrap("punctuation", part);
+      if (!part) {
+        return "";
+      }
+      if (/^\s+$/.test(part)) {
+        return escapeHtml(part);
+      }
+      if (/^["'`].*["'`]$/.test(part)) {
+        return wrap("string", part);
+      }
+      if (keywords.has(part)) {
+        return wrap("keyword", part);
+      }
+      if (/^[{}()[\],;.=]$/.test(part)) {
+        return wrap("punctuation", part);
+      }
       return escapeHtml(part);
     })
     .join("");

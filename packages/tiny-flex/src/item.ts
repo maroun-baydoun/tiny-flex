@@ -1,9 +1,16 @@
-import { getCssVariableName, TinyElement } from "./tiny";
+import { getCssVariableName } from "./css-variable";
+import { TinyElement, type TinyElementAttribute } from "./tiny";
 
 type TinyItemAttribute =
-  "flex" | "grow" | "shrink" | "basis" | "order" | "align-self";
+  | TinyElementAttribute
+  | "flex"
+  | "grow"
+  | "shrink"
+  | "basis"
+  | "order"
+  | "align-self";
 
-const itemAttributes: TinyItemAttribute[] = [
+const itemAttributes: readonly TinyItemAttribute[] = [
   "flex",
   "grow",
   "shrink",
@@ -20,21 +27,25 @@ const flexPrefixedAttributes = new Set<TinyItemAttribute>([
 
 export class TinyItem extends TinyElement {
   static getCss(): string {
-    return itemAttributes
+    const baseStyles = super.getCss();
+    const attributeStyles = itemAttributes
       .map((name) => {
         const property = flexPrefixedAttributes.has(name)
           ? `flex-${name}`
           : name;
 
-        return `:host([${name}]) { ${property}: var(${getCssVariableName(name)}); }`;
+        return `:host([${name}]:not([as-child])), :host([as-child][${name}]) ::slotted(*) { ${property}: var(${getCssVariableName(name)}); }`;
       })
       .join(" ");
+
+    return `${baseStyles} ${attributeStyles}`;
   }
 
   static get observedAttributes(): string[] {
-    return itemAttributes;
+    return [...super.observedAttributes, ...itemAttributes];
   }
 }
 
-if (!customElements.get("flex-item"))
+if (!customElements.get("flex-item")) {
   customElements.define("flex-item", TinyItem);
+}

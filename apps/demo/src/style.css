@@ -93,6 +93,19 @@
   .demo-diagonal { @apply items-start; }
   .demo-diagonal .demo-item { @apply text-base; }
   .demo-wrap .demo-item, .demo-order .demo-item { min-height: 4rem; @apply text-base; }
+  .as-child-layout { @apply min-h-32 items-center rounded-xl border border-border/80 bg-surface-elevated/80 px-4 py-5; }
+  .as-child-grid { @apply grid gap-4 md:grid-cols-2; }
+  .as-child-card { @apply min-w-0 rounded-2xl border border-border/80 bg-surface-elevated/80 p-4; }
+  .as-child-card snippet-card { @apply mt-6; }
+  .as-child-nav { @apply min-h-20 w-full rounded-xl border border-border/80 bg-surface-elevated/80 px-5 py-4; }
+  .as-child-nav strong { @apply text-base text-foreground; }
+  .as-child-nav div { @apply flex flex-wrap gap-4; }
+  .as-child-nav a { @apply text-sm text-muted transition-colors hover:text-foreground-strong; }
+  .as-child-status { @apply flex size-10 shrink-0 items-center justify-center rounded-full bg-cyan-950 text-lg font-semibold text-cyan-100; }
+  .as-child-message { @apply flex min-w-0 flex-col; }
+  .as-child-message strong { @apply text-base text-foreground; }
+  .as-child-message span { @apply mt-1 text-sm leading-6 text-muted; }
+  .as-child-dismiss { @apply shrink-0 rounded-lg border border-border px-3 py-2 text-sm font-semibold text-foreground transition-colors hover:bg-surface; }
   .item-one { @apply bg-cyan-950 text-cyan-100; }
   .item-two { @apply bg-accent text-accent-foreground; }
   .item-three { @apply bg-sky-900 text-sky-100; }

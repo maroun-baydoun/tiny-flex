@@ -11,7 +11,9 @@ export function demoCodePlugin(snippets: SnippetMap): Plugin {
         /<code([^>]*data-code="([^"]+)"[^>]*)><\/code>/g,
         (_match, attrs: string, key: string) => {
           const source = snippets[key];
-          if (!source) return `<code${attrs}></code>`;
+          if (!source) {
+            return `<code${attrs}></code>`;
+          }
           const language = attrs.includes('data-language="shell"')
             ? "shell"
             : attrs.includes('data-language="html"')
